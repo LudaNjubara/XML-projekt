@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.min.css" />
+    <title>XML Vjezba</title>
+    <script src="https://kit.fontawesome.com/1716a349d5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1 class="title">Your messages</h1>
+    <div class="message-container">
+      <div class="message">
+        <i class="fas fa-envelope"></i>
+        <img src="prvi.jpg" alt="First message person" />
+        <h1 class="from"></h1>
+        <div class="message-info">
+          <strong>To: </strong>
+          <p class="to"></p>
+          <strong>Message: </strong>
+          <p class="msg-content"></p>
+        </div>
+      </div>
+
+      <div class="message">
+        <i class="fas fa-envelope"></i>
+        <img src="drugi.jpg" alt="Second message person" />
+        <h1 class="from"></h1>
+        <div class="message-info">
+          <strong>To: </strong>
+          <p class="to"></p>
+          <strong>Message: </strong>
+          <p class="msg-content"></p>
+        </div>
+      </div>
+
+      <div class="message">
+        <i class="fas fa-envelope"></i>
+        <img src="treci.jpg" alt="Third message person" />
+        <h1 class="from"></h1>
+        <div class="message-info">
+          <strong>To: </strong>
+          <p class="to"></p>
+          <strong>Message: </strong>
+          <p class="msg-content"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.open("GET", "projekt.xml", false);
+      xmlhttp.send();
+
+      let xmlDoc = xmlhttp.responseXML;
+
+      let from = document.getElementsByClassName("from");
+      let to = document.getElementsByClassName("to");
+      let msgContent = document.getElementsByClassName("msg-content");
+      let msgBox = document.getElementsByClassName("message");
+
+      let xmlMessage = xmlDoc.getElementsByTagName("message");
+      let xmlFrom = xmlDoc.getElementsByTagName("from");
+      let xmlTo = xmlDoc.getElementsByTagName("to");
+      let xmlMsgBody = xmlDoc.getElementsByTagName("body");
+
+      for (let i = 0; i < xmlMessage.length; i++) {
+        from[i].innerHTML = xmlFrom[i].childNodes[0].nodeValue;
+        to[i].innerHTML = xmlTo[i].childNodes[0].nodeValue;
+        msgContent[i].innerHTML = xmlMsgBody[i].childNodes[0].nodeValue;
+      }
+    </script>
+  </body>
+</html>

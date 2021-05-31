@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messageService>
+    <message>
+        <from>Henry Bolton</from>
+        <to>Charlie Collins</to>
+        <body>It turns out you don't need all that stuff you insisted you did.
+            Please tell me you don't work in a morgue.</body>
+    </message>
+
+    <message>
+        <from>Charlize Hopkins</from>
+        <to>Brad Piskons</to>
+        <body>Grape jelly was leaking out the hole in the roof.
+            Going from child, to childish, to childlike is only a matter of time.</body>
+    </message>
+
+    <message>
+        <from>John Kontucky</from>
+        <to>Bradley Coolin</to>
+        <body>He had reached the point where he was paranoid about being paranoid.
+            A song can make or ruin a person’s day if they let it get to them.</body>
+    </message>
+</messageService>
